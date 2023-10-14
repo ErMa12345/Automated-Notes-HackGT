@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import JSONResponse
 import openai
@@ -41,3 +42,41 @@ async def generate_summary_and_questions(audio_text: str = Form(...)):
     except Exception as e:
         error_message = f"An error occurred: {str(e)}"
         return JSONResponse(content={"error": error_message}, status_code=500)
+
+"""@app.post("/ask_question")
+async def ask_question(audio_text: str = Form(...), question: str = Form(...)):
+    try:
+        # Calculate similarity score between user's question and lecture text
+        question_doc = nlp(question)
+        lecture_doc = nlp(audio_text)
+        similarity_score = question_doc.similarity(lecture_doc)
+
+        # Set a similarity threshold (you can adjust this based on your needs)
+        similarity_threshold = 0.8
+
+        # Only answer questions with similarity above the threshold
+        if similarity_score >= similarity_threshold:
+            # Make a request to ChatGPT-3.5-Turbo API for answering the user's question
+            response = openai.Completion.create(
+                engine="gpt-3.5-turbo",
+                prompt=f"Q: {question}\nA:",
+                max_tokens=150,
+                api_key=api_key
+            )
+
+            # Extract the answer from API res
+            answer = response.choices[0].text.strip()
+
+            # Prepare the response
+            response_data = {
+                "answer": answer
+            }
+
+            return JSONResponse(content=response_data)
+        else:
+            # Return a message indicating the question is not relevant to the lecture text
+            return JSONResponse(content={"error": "Question is not relevant to the lecture text."}, status_code=400)
+
+    except Exception as e:
+        error_message = f"An error occurred: {str(e)}"
+        return JSONResponse(content={"error": error_message}, status_code=500)"""
