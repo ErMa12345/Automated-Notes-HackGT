@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.recorder_component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio_element_component {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_lecture_name {
+  border: none;
+  margin-top: 10px;
+  text-align: center;
+  width: auto;
+}
+
+.input_lecture_name:focus {
+  outline: none;
+  border-bottom: 2px solid black;
+}
