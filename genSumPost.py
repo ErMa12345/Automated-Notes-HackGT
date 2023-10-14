@@ -5,7 +5,7 @@ import openai
 app = FastAPI()
 
 # Set your OpenAI API key here
-api_key = "API_KEY"
+api_key = "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"
 
 @app.post("/generate_summary_and_questions")
 async def generate_summary_and_questions(audio_text: str = Form(...)):
