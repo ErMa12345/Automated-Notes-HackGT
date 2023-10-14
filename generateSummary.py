@@ -3,6 +3,7 @@ import openai
 # Set your OpenAI API key here
 api_key = "API_KEY"
 
+
 file_path = "Transcriptions/TranscribedAudio.txt"
 output_file_path = "summary.txt"  # Path to save the summary
 practice_problems_file_path = "practice_problems.txt"  # Path to save the practice problems
