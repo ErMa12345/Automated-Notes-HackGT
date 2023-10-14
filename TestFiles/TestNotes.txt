@@ -1,0 +1,10 @@
+Lecture Notes:
+- Slide 13: Method of Loci is a mnemonic technique for improving memory recall.
+- Method of Loci involves mentally walking along a familiar path, associating images with items or locations along the path.
+- Example: Using your house as a mental path for memory recall.
+- Start at the back door of your house and visualize the first item you see.
+- Associate the first piece of information you want to remember with that item.
+- Move on to the next location in your house, such as the kitchen.
+- Visualize the first thing you see in the kitchen and associate the second item with it.
+- Continue this process for other locations in your house, associating each item with a specific location.
+- By mentally retracing your path, you can recall the items and the information associated with them.
