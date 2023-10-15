@@ -57,7 +57,7 @@ export default function FileUploader(props) {
 
   return (
     <div className = "upload_file_component">
-        <h2>...or, upload a file</h2>
+        <h2>Step 2: Upload the file</h2>
         <div className = "file_uploader_component">
             <button className="button_upload" onClick={handleClick}>{buttonName}</button>
             <input

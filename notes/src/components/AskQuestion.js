@@ -33,7 +33,7 @@ const AskQuestion = () => {
 
   return (
     <div classname = "ask_question">
-      <h2>Ask a Question</h2>
+      <h2>Ask a study buddy!</h2>
 
       <label htmlFor="question">Enter your question:</label>
       <input
