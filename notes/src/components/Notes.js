@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import AskQuestion from './AskQuestion';
 
 export default function Notes(props) {
     // const { data } = props['sum']
@@ -30,6 +31,11 @@ export default function Notes(props) {
                     {questions.map((question) => <p>{question}</p>)}
                 </div> : <></>}
             </div>
+
+            
+            {/* Render the AskQuestion component below the file upload section */}
+            <AskQuestion className="ask_question" />
+            
         </div>
     )
 }

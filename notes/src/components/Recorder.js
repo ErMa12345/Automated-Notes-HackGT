@@ -31,7 +31,10 @@ export default function Recorder() {
 
   return (
     <div className="recorder_component">
-      <h1>Record Your Lecture</h1>
+      {/* Title added to the middle top of the screen */}
+      <h1 style={{ textAlign: 'center', marginTop: '20px', fontSize: '50px', fontFamily: 'Monaco, monospace', whiteSpace: 'nowrap' }}>Study Buddy</h1>
+
+      <h2>Record Your Lecture</h2>
       <AudioRecorder
         onRecordingComplete={(blob) => addAudioElement(blob)}
         audioTrackConstraints={{
@@ -46,13 +49,14 @@ export default function Recorder() {
         }}
         showVisualizer={true}
         className="audio_recorder"
+        
       />
+
       {audioComponents.map((audioComponent) => audioComponent)}
-      
       <br />
 
-      {/* Render the AskQuestion component */}
-      <AskQuestion />
+      {/* Render the AskQuestion component below the file upload section */}
+      <AskQuestion className="ask_question" />
     </div>
   );
 }

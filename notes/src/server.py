@@ -22,7 +22,7 @@ def upload_audio():
                 messages=[
                     {"role": "system", "content": "You are a student that writes detailed bulleted lecture notes."},
                     {"role": "user", "content": transcription['text']},
-                    {"role": "assistant", "content": "Generate detailed bulleted lecture notes and 5 practice problems based on the lecture."}
+                    {"role": "assistant", "content": "Generate detailed bulleted lecture notes. Then generate 5 practice problems based on the lecture. Seperate the bulleted notes and problems with the key term 'Practice Problems:'"}
                 ],
                 api_key=api_key
             )

@@ -1,10 +1,39 @@
+/* html, body, #root {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background-color: #D9AFD9;
+  background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+  font-family: Monaco, monospace;
+
+} */
+
 html, body, #root {
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  background-color: #D9AFD9;
+  position: relative;
+  font-family: Monaco, monospace;
 }
+
+#root::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+  z-index: -1;
+  transform: scaleX(-1); /* Flip the background horizontally */
+}
+
+
 
 .App {
   display: flex;
@@ -29,6 +58,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
 }
 
 .recorder_component {
@@ -49,6 +79,10 @@ html, body, #root {
   margin-top: 10px;
   text-align: center;
   width: auto;
+}
+
+.ask_question {
+
 }
 
 .input_lecture_name:focus {
@@ -109,6 +143,11 @@ html, body, #root {
   transform: translateY(0);
 }
 
+.ask_question {
+  margin-top: 20px; /* Adjust the margin as needed */
+  width: fit-content; /* Set the width as needed */
+}
+
 .generate_notes {
   width: fit-content;
   margin-top: 20px;
@@ -136,6 +175,7 @@ html, body, #root {
   animation: spinner 1s infinite linear;
 }
 
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -144,4 +184,7 @@ html, body, #root {
   100% {
     transform: rotate(360deg);
   }
-}
+} 
+ 
+
+ 
