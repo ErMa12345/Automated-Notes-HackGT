@@ -38,12 +38,17 @@ export default function FileUploader(props) {
     .then(response => response.json())
     .then(data => {
         // transcriptionResult.textContent = data.transcription;
+        console.log(data)
+        const summary = data['summary']
+        const questions = data['questions']
+        console.log(summary)
+        console.log(questions)
         spinner.style.display = 'none';
         spinner_message.style.display = 'none'
         document.getElementById('generate_notes').style.display = 'none';
         const domNode = document.getElementById('test');
         const root = createRoot(domNode);
-        root.render(<Notes />)
+        root.render(<Notes sum = {[summary, questions]}/>)
     })
     .catch(error => {
         console.error('error: ', error)
