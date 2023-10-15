@@ -22,7 +22,7 @@ def upload_audio():
                 messages=[
                     {"role": "system", "content": "You are a student that writes detailed bulleted lecture notes."},
                     {"role": "user", "content": transcription['text']},
-                    {"role": "assistant", "content": "Generate detailed bulleted lecture notes and 5 practice problems based on the lecture."}
+                    {"role": "assistant", "content": "Generate detailed bulleted lecture notes. Then generate 5 practice problems based on the lecture. Seperate the bulleted notes and problems with the key term 'Practice Problems:'"}
                 ],
                 api_key=api_key
             )
@@ -44,6 +44,36 @@ def upload_audio():
     except Exception as e:
         print(f"Error processing request: {e}")
         return jsonify({'error': 'Internal server error'})
+
+@app.route('/ask_question', methods=['POST'])
+def ask_question():
+    try:
+        # Get the question from the request form data
+        question = request.form['question']
+
+        # Create a chat conversation with OpenAI API
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant that answers questions"},
+                {"role": "user", "content": question},
+            ],
+            api_key=api_key
+        )
+
+        # Extract the answer from API response
+        answer = response.choices[0].message['content'].strip()
+
+        # Prepare the response
+        response_data = {
+            "answer": answer
+        }
+        return jsonify(response_data)
+
+    except Exception as e:
+        # Handle exceptions, log them, and return an error response if needed
+        error_message = f"An error occurred: {str(e)}"
+        return jsonify({"error": error_message}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
