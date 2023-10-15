@@ -7,7 +7,6 @@ html, body, #root {
 }
 
 .App {
-  text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,6 +21,7 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  text-align: center;
 }
 
 .notes_section {
